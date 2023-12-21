@@ -1,0 +1,178 @@
+body {
+    font-size: 100%;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    padding: 0;
+    overflow-y: hidden;
+}
+
+h1 {
+    font-family: Krona One, sans-serif;
+    letter-spacing: 3rem;
+    font-size: 7em;
+    color: #eeeeee;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    top: 40%;
+    left: 40%;
+    transform: translate(-40%, -40%);
+    animation: disappear 500ms 1 forwards, up 500ms 1 forwards;
+    animation-delay: 3s,4s;
+    z-index: 4;
+}
+
+h2 {
+    font-family: Krona One, sans-serif;
+    letter-spacing: 0.5rem;
+    font-size: 3em;
+    color: #eee;
+    width: 100%;
+    text-align: left;
+    margin-left: 5.5rem;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    width: 100vw;
+    height: 100vh;
+    margin: 0 auto;
+    text-align: center;
+    justify-content: center;
+    z-index: 2;
+}
+
+.column {
+    width: 40vw;
+    height: 100vh;
+    justify-content: center;
+    align-content: center;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+ul {
+    margin-left: 3rem;
+    list-style-type: none;
+    width: 100%;
+    height: 60vh;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: -0.5rem;
+}
+
+li {
+    font-family: Jost, sans-serif;
+    font-size: 1.25em;
+    font-weight: 300;
+    color: #eeeeee;
+    width: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+}
+
+a {
+    display: flex;
+    align-items: center;
+}
+
+hr {
+    border: 1px solid #eeeeee;
+    width: 30px;
+    margin-right: 10px;
+}
+
+.hr-current {
+    width: 70px;
+    border: 1px solid #47ACE1;
+    margin: 0 10px 0 0;
+}
+
+.li-current {
+    font-weight: 600;
+}
+
+a:visited {
+    text-decoration: none;
+    color: #eee;
+}
+
+li:hover {
+    font-weight: 600;
+    cursor: pointer;
+}
+
+a:link {
+    text-decoration: none;
+    color: #eee;
+}
+
+.img-container {
+    margin: 0 auto;
+    background-image: url("img/album-cover.jpeg");
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 80%;
+    height: 70%;
+}
+
+.bg-gradient {
+    background-image: linear-gradient(45deg, #47ACE1, #AF6A7D, #C9786B, #AF6A7D, #47ACE1);
+    background-size: 200%;
+    background-attachment: fixed;
+    animation: bg-gradient 8s infinite alternate;
+}
+
+.slide-in {
+    animation-name: appear;
+    animation-delay: 3.25s;
+    animation-duration: 500ms;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    visibility: hidden;
+}
+
+@keyframes disappear {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes appear {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        visibility: visible;
+        opacity: 1;
+    }
+}
+
+@keyframes up {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-300%);
+    }
+}
+
+@keyframes over {
+    0% {transform: translate3d(0px, 0px, 0px);
+        animation-timing-function: ease-in;}
+    100% {transform: translate3d(20%, 0px, 0px);
+        animation-timing-function: ease-out;}
+}
+
+@keyframes bg-gradient {
+    0% {background-position: left}
+    100% {background-position: right}
+}
